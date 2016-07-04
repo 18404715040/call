@@ -14,6 +14,11 @@
 		5420A54C1D29E94700E7D863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5420A54A1D29E94700E7D863 /* LaunchScreen.storyboard */; };
 		5420A5571D29E94700E7D863 /* callTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420A5561D29E94700E7D863 /* callTests.swift */; };
 		5420A5621D29E94800E7D863 /* callUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420A5611D29E94800E7D863 /* callUITests.swift */; };
+		5420A5701D29E95E00E7D863 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5420A56F1D29E95E00E7D863 /* libsqlite3.0.tbd */; };
+		5420A68B1D2A051B00E7D863 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420A6881D2A051B00E7D863 /* SQLiteDB.swift */; };
+		5420A68C1D2A051B00E7D863 /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420A6891D2A051B00E7D863 /* SQLTable.swift */; };
+		5420A68D1D2A051B00E7D863 /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420A68A1D2A051B00E7D863 /* String-Extras.swift */; };
+		5420A68F1D2A0EA800E7D863 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 5420A68E1D2A0EA800E7D863 /* data.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		5420A55D1D29E94800E7D863 /* callUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = callUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5420A5611D29E94800E7D863 /* callUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = callUITests.swift; sourceTree = "<group>"; };
 		5420A5631D29E94800E7D863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5420A56F1D29E95E00E7D863 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		5420A6881D2A051B00E7D863 /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		5420A6891D2A051B00E7D863 /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
+		5420A68A1D2A051B00E7D863 /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
+		5420A68E1D2A0EA800E7D863 /* data.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.db; sourceTree = "<group>"; };
+		5420A6901D2A0F5D00E7D863 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5420A5701D29E95E00E7D863 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,9 @@
 		5420A5351D29E94700E7D863 = {
 			isa = PBXGroup;
 			children = (
+				5420A56F1D29E95E00E7D863 /* libsqlite3.0.tbd */,
+				5420A68E1D2A0EA800E7D863 /* data.db */,
+				5420A6871D2A051B00E7D863 /* SQLiteDB */,
 				5420A5401D29E94700E7D863 /* call */,
 				5420A5551D29E94700E7D863 /* callTests */,
 				5420A5601D29E94800E7D863 /* callUITests */,
@@ -103,6 +118,7 @@
 				5420A5481D29E94700E7D863 /* Assets.xcassets */,
 				5420A54A1D29E94700E7D863 /* LaunchScreen.storyboard */,
 				5420A54D1D29E94700E7D863 /* Info.plist */,
+				5420A6901D2A0F5D00E7D863 /* Header.h */,
 			);
 			path = call;
 			sourceTree = "<group>";
@@ -123,6 +139,17 @@
 				5420A5631D29E94800E7D863 /* Info.plist */,
 			);
 			path = callUITests;
+			sourceTree = "<group>";
+		};
+		5420A6871D2A051B00E7D863 /* SQLiteDB */ = {
+			isa = PBXGroup;
+			children = (
+				5420A6881D2A051B00E7D863 /* SQLiteDB.swift */,
+				5420A6891D2A051B00E7D863 /* SQLTable.swift */,
+				5420A68A1D2A051B00E7D863 /* String-Extras.swift */,
+			);
+			name = SQLiteDB;
+			path = ../SQLiteDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5420A54C1D29E94700E7D863 /* LaunchScreen.storyboard in Resources */,
+				5420A68F1D2A0EA800E7D863 /* data.db in Resources */,
 				5420A5491D29E94700E7D863 /* Assets.xcassets in Resources */,
 				5420A5471D29E94700E7D863 /* Main.storyboard in Resources */,
 			);
@@ -256,6 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5420A68D1D2A051B00E7D863 /* String-Extras.swift in Sources */,
+				5420A68B1D2A051B00E7D863 /* SQLiteDB.swift in Sources */,
+				5420A68C1D2A051B00E7D863 /* SQLTable.swift in Sources */,
 				5420A5441D29E94700E7D863 /* ViewController.swift in Sources */,
 				5420A5421D29E94700E7D863 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +436,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-23.call";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/20141105074qf/Desktop/call/call/Header.h;
 			};
 			name = Debug;
 		};
@@ -416,6 +448,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-23.call";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/20141105074qf/Desktop/call/call/Header.h;
 			};
 			name = Release;
 		};
@@ -484,6 +517,7 @@
 				5420A5681D29E94800E7D863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5420A5691D29E94800E7D863 /* Build configuration list for PBXNativeTarget "callTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +526,7 @@
 				5420A56B1D29E94800E7D863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5420A56C1D29E94800E7D863 /* Build configuration list for PBXNativeTarget "callUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +535,7 @@
 				5420A56E1D29E94800E7D863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
