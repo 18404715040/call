@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var txtUname: UITextField!
     @IBOutlet var txtMobile: UITextField!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var address: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +25,9 @@ class ViewController: UIViewController {
         //获取数据库实例
         db = SQLiteDB.sharedInstance()
         //如果表还不存在则创建表（其中uid为自增主键）
-        db.execute("create table if not exists t_user(uid integer primary key,uname varchar(20),mobile varchar(20))")
+        db.execute("create table if not exists user(uid integer primary key,uname varchar(20),mobile varchar(20),address varchar(20),email varchar(20))")
         //如果有数据则加载
-        initUser()
+        //initUser()
     }
 
     @IBAction func save(sender: AnyObject) {
@@ -32,28 +35,30 @@ class ViewController: UIViewController {
     }
     //从SQLite加载数据
     func initUser() {
-        let data = db.query("select * from t_user")
+        let data = db.query("select * from user")
         if data.count > 0 {
             //获取最后一行数据显示
             let user = data[data.count - 1]
-            txtUname?.text = user["uname"] as? String
-            txtMobile?.text = user["mobile"] as? String
+            txtUname.text = user["uname"] as? String
+            txtMobile.text = user["mobile"] as? String
+            address.text = user["address"] as? String
+            email.text = user["email"] as? String
         }
     }
     
-    //保存数据到SQLite
+        //保存数据到SQLite
     func saveUser() {
-        let uname = self.txtUname?.text!
-        let mobile = self.txtMobile?.text!
+        let uname = self.txtUname.text!
+        let mobile = self.txtMobile.text!
+        let address = self.address.text!
+        let email = self.email.text!
         //插入数据库，这里用到了esc字符编码函数，其实是调用bridge.m实现的
-        let sql = "insert into t_user(uname,mobile) values('\(uname)','\(mobile)')"
-        print("sql: \(sql)")
+        let sql = "insert into user(uname,mobile,address,email) values('\(uname)','\(mobile)','\(address)','\(email)')"
         //通过封装的方法执行sql
         let result = db.execute(sql)
         print(result)
     }
-    
-    override func didReceiveMemoryWarning() {
+            override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
